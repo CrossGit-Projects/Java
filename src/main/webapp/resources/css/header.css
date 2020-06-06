@@ -1,0 +1,18 @@
+@CHARSET "UTF-8";
+
+body {
+	background-color: #f6f6ff;
+	font-family: Calibri, Myriad;
+}
+
+
+DIV.header {
+	color: white;
+	background-image: url('../images/header.jpg');
+	background-size:100% 100%;;
+	background-repeat: no-repeat;
+
+	border-collapse: collapse;
+	border: 1px solid #fff; /*for older IE*/
+	border-style: hidden;
+}
