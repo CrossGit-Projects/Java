@@ -78,8 +78,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(587);
 
-        mailSender.setUsername("karolekkawecki@gmail.com");
-        mailSender.setPassword("awsAWS%12345");
+        mailSender.setUsername("*************");
+        mailSender.setPassword("*************");
 
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");
