@@ -6,4 +6,4 @@
 - Podział na role: admin, doktor, pacjent,
 - Wykorzystanie spring security,
 - Warstwa front-end przy użyciu JSP,
-- Zapis na wizytę, mail potwierdzający, profile użytkowników, wystawianie rachunków w postaci pdf.
+- Zapis na wizytę, mail potwierdzający, profile użytkowników, re-captcha, wystawianie rachunków w postaci pdf.
