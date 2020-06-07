@@ -1,7 +1,6 @@
 package com.dmcs.karol.service;
 
 import com.dmcs.karol.domain.AppUser;
-import com.dmcs.karol.domain.CardPatient;
 import com.dmcs.karol.domain.Visit;
 import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Document;
@@ -10,6 +9,7 @@ import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import org.springframework.stereotype.Service;
+
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -17,7 +17,7 @@ import java.io.OutputStream;
 @Service
 public class PdfServiceImpl implements PdfService {
 
-    public void generatePdf(AppUser appUser,Visit visit, HttpServletResponse response) {
+    public void generatePdf(AppUser appUser, Visit visit, HttpServletResponse response) {
         try {
             OutputStream o = response.getOutputStream();
             response.setCharacterEncoding("UTF-8");
@@ -62,7 +62,7 @@ public class PdfServiceImpl implements PdfService {
             pdf.add(table);
             pdf.close();
             o.close();
-        }catch (IOException | DocumentException e) {
+        } catch (IOException | DocumentException e) {
             e.printStackTrace();
         }
     }

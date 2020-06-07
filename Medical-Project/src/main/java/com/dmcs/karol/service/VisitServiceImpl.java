@@ -11,9 +11,6 @@ import com.dmcs.karol.utils.AppDemoUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 @Service
@@ -45,7 +42,6 @@ public class VisitServiceImpl implements VisitService {
         visitRepository.save(visit);
 
 
-
     }
 
     @Override
@@ -54,8 +50,8 @@ public class VisitServiceImpl implements VisitService {
     }
 
     @Transactional
-    public void updateVisit(CardPatient cardPatient,int active, long id) {
-        visitRepository.updateVisit(cardPatient,active, id);
+    public void updateVisit(CardPatient cardPatient, int active, long id) {
+        visitRepository.updateVisit(cardPatient, active, id);
     }
 
     @Transactional

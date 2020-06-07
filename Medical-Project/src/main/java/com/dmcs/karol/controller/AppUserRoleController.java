@@ -22,7 +22,7 @@ public class AppUserRoleController {
         this.appUserRoleService = appUserRoleService;
     }
 
-    @RequestMapping(value="/admin/appUserRole")
+    @RequestMapping(value = "/admin/appUserRole")
     public String showUserRole(Model model) {
         model.addAttribute("appUserRole", new AppUserRole());
         return "admin/appUserRole";

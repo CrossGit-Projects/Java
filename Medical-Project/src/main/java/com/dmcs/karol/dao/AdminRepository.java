@@ -17,7 +17,7 @@ public interface AdminRepository extends JpaRepository<AppUser, Long> {
 
     @Modifying
     @Query("UPDATE AppUser u SET u.enabled = :intActive WHERE u.id = :id")
-    void updateActivationUser(@Param("intActive")boolean active, @Param("id") long id);
+    void updateActivationUser(@Param("intActive") boolean active, @Param("id") long id);
 
     @Modifying
     @Query(value = "UPDATE appuser_appuserrole u SET u.appuserrole_id = :roleId WHERE u.appuser_id = :id", nativeQuery = true)

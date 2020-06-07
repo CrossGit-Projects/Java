@@ -33,7 +33,6 @@ public class VisitController {
         String returnPage = null;
 
         if (result.hasErrors()) {
-            System.out.println("Tutaj mamy błąd bez zapisu.");
             return "doctor/visitDoctor";
         } else {
 

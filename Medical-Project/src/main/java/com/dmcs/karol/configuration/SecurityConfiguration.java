@@ -90,21 +90,20 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         return mailSender;
     }
 
-//     wstrzyknięcie roli beanem
-//    @Bean
-//    public void createTestData() {
-//        AppUserRole roleAdmin = new AppUserRole();
-//        roleAdmin.setRole("ROLE_ADMIN");
-//        roleAdmin = appUserRoleRepository.save(roleAdmin);
-//
-//        AppUserRole rolePatient = new AppUserRole();
-//        rolePatient.setRole("ROLE_PATIENT");
-//        rolePatient = appUserRoleRepository.save(rolePatient);
-//
-//        AppUserRole roleDoctor = new AppUserRole();
-//        roleDoctor.setRole("ROLE_DOCTOR");
-//        roleDoctor = appUserRoleRepository.save(roleDoctor);
-//    }
+    @Bean
+    public void createTestData() {
+        AppUserRole roleAdmin = new AppUserRole();
+        roleAdmin.setRole("ROLE_ADMIN");
+        roleAdmin = appUserRoleRepository.save(roleAdmin);
+
+        AppUserRole rolePatient = new AppUserRole();
+        rolePatient.setRole("ROLE_PATIENT");
+        rolePatient = appUserRoleRepository.save(rolePatient);
+
+        AppUserRole roleDoctor = new AppUserRole();
+        roleDoctor.setRole("ROLE_DOCTOR");
+        roleDoctor = appUserRoleRepository.save(roleDoctor);
+    }
 
 }
 

@@ -1,7 +1,5 @@
 package com.dmcs.karol.domain;
 
-import com.itextpdf.text.Image;
-
 import javax.persistence.*;
 
 @Entity

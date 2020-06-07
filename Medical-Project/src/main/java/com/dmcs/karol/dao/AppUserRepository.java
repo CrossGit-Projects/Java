@@ -16,7 +16,9 @@ import org.springframework.stereotype.Repository;
 public interface AppUserRepository extends JpaRepository<AppUser, Long> {
 
     List<AppUser> findByLastName(String lastName);
+
     AppUser findById(long id);
+
     AppUser findByEmail(String email);
 
     @Modifying
@@ -24,5 +26,3 @@ public interface AppUserRepository extends JpaRepository<AppUser, Long> {
     public void updateActivation(@Param("activeParam") boolean activeParam, @Param("activationCode") String activationCode);
 
 }
-
-

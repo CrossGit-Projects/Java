@@ -3,13 +3,11 @@ package com.dmcs.karol.controller;
 
 import com.dmcs.karol.dao.VisitRepository;
 import com.dmcs.karol.domain.AppUser;
-import com.dmcs.karol.domain.CardDoctor;
 import com.dmcs.karol.domain.CardPatient;
 import com.dmcs.karol.domain.Visit;
 import com.dmcs.karol.service.AppUserService;
 import com.dmcs.karol.service.CardPatientService;
 import com.dmcs.karol.utils.AppDemoUtils;
-import org.apache.tomcat.util.codec.binary.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.MessageSource;
@@ -22,9 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -53,7 +48,6 @@ public class CardPatientController {
         String username = AppDemoUtils.getLoggedUser();
         AppUser user = appUserService.findByEmail(username);
         CardPatient cardPatient = user.getCardPatient();
-
 
 
         model.addAttribute("user", user);

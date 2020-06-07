@@ -2,7 +2,6 @@ package com.dmcs.karol.dao;
 
 
 import com.dmcs.karol.domain.CardDoctor;
-import com.dmcs.karol.domain.CardPatient;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

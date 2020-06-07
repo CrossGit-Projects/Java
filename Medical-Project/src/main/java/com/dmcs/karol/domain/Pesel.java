@@ -1,13 +1,8 @@
 package com.dmcs.karol.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import org.codehaus.jackson.annotate.JsonIgnore;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class Pesel {
@@ -18,9 +13,9 @@ public class Pesel {
 
     String PESEL;
 
-//    @JsonBackReference
-//    @OneToOne(mappedBy="pesel")
-//    private AppUser appUser;
+    @JsonBackReference
+    @OneToOne(mappedBy = "pesel")
+    private AppUser appUser;
 
     public long getId() {
         return id;
@@ -38,12 +33,12 @@ public class Pesel {
         this.PESEL = PESEL;
     }
 
-//    public AppUser getAppUser() {
-//        return appUser;
-//    }
-//
-//    public void setAppUser(AppUser appUser) {
-//        this.appUser = appUser;
-//    }
+    public AppUser getAppUser() {
+        return appUser;
+    }
+
+    public void setAppUser(AppUser appUser) {
+        this.appUser = appUser;
+    }
 }
 

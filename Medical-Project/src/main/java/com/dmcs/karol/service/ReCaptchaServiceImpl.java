@@ -1,12 +1,17 @@
 package com.dmcs.karol.service;
 
 import org.springframework.stereotype.Service;
+
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
 import javax.net.ssl.HttpsURLConnection;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStreamReader;
+import java.io.StringReader;
 import java.net.URL;
+
 @Service
 public class ReCaptchaServiceImpl implements ReCaptchaService {
     private static final String URL = "https://www.google.com/recaptcha/api/siteverify";
@@ -16,7 +21,7 @@ public class ReCaptchaServiceImpl implements ReCaptchaService {
     @Override
     public boolean verify(String captcha) {
         if (captcha == null || "".equals(captcha)) return false;
-        try{
+        try {
             URL obj = new URL(URL);
             HttpsURLConnection con = (HttpsURLConnection) obj.openConnection();
             con.setRequestMethod("POST");
@@ -39,7 +44,7 @@ public class ReCaptchaServiceImpl implements ReCaptchaService {
             JsonObject jsonObject = jsonReader.readObject();
             jsonReader.close();
             return jsonObject.getBoolean("success");
-        } catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }

@@ -1,8 +1,6 @@
 package com.dmcs.karol.service;
 
-import com.dmcs.karol.domain.AppUser;
 import com.dmcs.karol.domain.CardDoctor;
-import com.dmcs.karol.domain.CardPatient;
 
 public interface CardDoctorService {
 

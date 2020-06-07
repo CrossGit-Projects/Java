@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
@@ -39,15 +40,15 @@ public class PdfController {
         CardPatient cardPatient1 = user.getCardPatient();
         Visit visit = visitRepository.findOne(visitId);
 
-        System.out.println("AAAAAAAA: "+ visit.getCardPatient().getId() );
+        System.out.println("AAAAAAAA: " + visit.getCardPatient().getId());
         System.out.println("BBBBBBB: " + cardPatient1.getId());
 
 
-        if(visit.getCardPatient().getId() == cardPatient1.getId()) {
+        if (visit.getCardPatient().getId() == cardPatient1.getId()) {
             pdfService.generatePdf(appUserService.getAppUser(appUserId), visitService.getVisitId(visitId), response);
             return "redirect:/patient/myVisits";
-        }else{
-              return "redirect:/accessDenied";
+        } else {
+            return "redirect:/accessDenied";
         }
     }
 }

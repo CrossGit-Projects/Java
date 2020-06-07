@@ -103,8 +103,6 @@ public class AdminPageController {
         return "redirect:/admin/users/1";
     }
 
-
-    //  Pobranie listy userów
     private Page<AppUser> getAllUsersPageable(int page) {
         Page<AppUser> pages = adminService.findAll(new PageRequest(page, ELEMENTS));
         for (AppUser users : pages) {
@@ -114,7 +112,6 @@ public class AdminPageController {
         return pages;
     }
 
-    // przygotowanie mapy ról
     public Map<Integer, String> prepareRoleMap() {
         Locale locale = Locale.getDefault();
         Map<Integer, String> roleMap = new HashMap<Integer, String>();
@@ -124,7 +121,6 @@ public class AdminPageController {
         return roleMap;
     }
 
-    // przygotowanie map aktywny/nieaktywny
     public Map<Boolean, String> prepareActivityMap() {
         Locale locale = Locale.getDefault();
         Map<Boolean, String> activityMap = new HashMap<>();
